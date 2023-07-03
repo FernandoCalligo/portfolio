@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
+@import 'animate.css';
+
+:root {
+  --brand-color: #FDBA74;
+  --dark-color: #27272A;
+  --mid-color: #FED7AA;
+  --light-color: #F8FAFC;
+
+  font-family: 'Lexend', sans-serif;
+  color-scheme: light dark;
+  background-color: var(--dark-color);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  scroll-behavior: smooth;
+}
+
+header {
+  position: fixed !important;
+  padding: 1rem 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: #27272A33;
+  backdrop-filter: brightness(60%);
+  z-index: 2;
+}
+
+.links {
+  position: relative;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  gap: 4rem;
+}
+
+nav .toggle_btn {
+  color: var(--brand-color);
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+  margin-left: 1.5rem;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  position: relative;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--light-color);
+  transition: color 0.2s ease-in-out;
+  
+}
+
+li a::after {
+  content: " ";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: var(--mid-color);
+  transition: 0.2s ease-in-out;
+
+}
+
+a:hover:after {
+  width: 100%;
+}
+
+li a:hover {
+  color: var(--mid-color)
+}
+
+.dropdown_menu {
+  display: none;
+  height: 0;
+  background: #27272A33;
+  backdrop-filter: brightness(60%);
+  overflow: hidden;
+  transition: height .6s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+}
+
+.dropdown_menu.open {
+  height: 240px;
+}
+
+.dropdown_menu li {
+  padding: 0.7rem 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.homepage {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  color: var(--light-color);
+  z-index: -1;
+}
+
+.homepage div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  max-width: 80vw;
+}
+
+.homepage h1 {
+  font-size: 5rem;
+  color: var(--brand-color);
+}
+
+.homepage h2 {
+  font-size: 2.25rem;
+  position: relative;
+  top: -70px;
+}
+
+.homepage span {
+  font-size: 1.5rem;
+  position: relative;
+  top: 50px;
+}
+
+.playButton {
+  position: relative;
+  bottom: 45px;
+  padding: 0.75rem;
+  border: 1px solid var(--mid-color);
+  border-radius: 12px;
+  background: var(--mid-color);
+  color: var(--dark-color);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.15s linear;
+}
+
+.playButton:hover {
+  background-color: var(--dark-color);
+  color: var(--mid-color);
+}
+
+.background {
+  width: 100vw;
+}
+
+.container {
+  position: absolute;
+  inset: 0 0 0 0;
+  margin: auto;
+  width: 80vw;
+  height: 100vh;
+  pointer-events: none; /* Evita que el contenedor afecte la interacción del usuario */
+  z-index: -2; /* Coloca el contenedor detrás de otros elementos */
+}
+
+.bubble {
+  position: absolute;
+  height: 5px;
+  bottom: 0;
+  margin: auto;
+  border-radius: 50%;
+  box-shadow: 1px -1px 108px 30px var(--brand-color);
+  -webkit-box-shadow: 1px -1px 108px 30px var(--brand-color);
+  -moz-box-shadow: 1px -1px 108px 30px var(--brand-color);
+  overflow: hidden;
+  z-index: -2;
+  background-color: #fdbb74;
+}
+
+.arrow-down {
+  position: absolute;
+  bottom: 0;
+}
+
+.arrow-down i {
+  font-size: 3rem;
+}
+
+/* About */
+
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+
+#about img {
+  max-width: 26rem;
+  border-radius: 1rem;
+}
+
+.infoCont {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.25rem;
+  width: 35%;
+  gap: 2rem;
+}
+
+.linkbtn {
+  padding: 1rem;
+  width: 150px;
+  border-radius: 1rem;
+  font-weight: bold;
+  background-color: transparent;
+  border: 2px solid var(--mid-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 1.25rem;
+}
+
+.linkbtn:hover {
+  background-color: var(--mid-color);
+  color: #27272A;
+}
+
+.infoCont span {
+  font: 1.5rem;
+  text-align: center;
+}
+
+.infoCont i {
+  font-size: 1.25rem;
+  padding: 0.5rem 0.5rem;;
+}
+
+.infoText p {
+  width: 100%;
+  padding-bottom: 1.75rem;
+}
+
+.courses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.courses img {
+  width: 13rem;
+}
+
+/* Skills */
+
+#skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  text-align: center;
+}
+
+h3 {
+  border-bottom: 1px solid var(--mid-color);
+  padding-bottom: 0.5rem;
+}
+
+.techSkills, #techLearning {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+  z-index: 1;
+}
+
+svg {
+  width: 8rem;
+  cursor: pointer;
+  fill: var(--light-color);
+}
+
+#projects {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contProjects {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+#rick {
+  background-image: url("/assets/rick&morty.png");
+  background-size: cover;
+  background-position: center center;
+}
+
+#todolist{
+  background-image: url("/assets/TodoLisapp.png");
+  background-size: cover;
+  background-position: center center;
+}
+
+#weatherapp{
+  background-image: url("/assets/weatherapp.png");
+  background-size: cover;
+  background-position: center center;
+}
+
+#pokeapi{
+  background-image: url("/assets/pokeapp.png");
+  background-size: cover;
+  background-position: center center;
+}
+
+.cardbody {
+  position: relative;
+  border: 3px solid var(--mid-color);
+  width: 40rem;
+  max-height: 350px;
+  height: 300px;
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.hover {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-color);
+  color: var(--mid-color);
+  font-weight: bold;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  transition: all 0.3s ease-in-out;
+}
+
+.hover div {
+  display: flex;
+  gap: 1rem;
+}
+
+.hover div a {
+  font-size: 1.75rem;
+  transition: scale 0.3s ease-in-out;
+}
+
+.hover div a:hover {
+  scale: 1.2;
+}
+
+.hover:hover {
+  height: 100%;
+  opacity: 80%;
+  cursor: pointer;
+}
+
+.cardbody img {
+  max-width: 38rem;
+}
+
+footer {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+
+  #projects button {
+    position: relative;
+    display: block;
+  }
+
+  .cardbody{ 
+    width: 20rem;
+  }
+
+  .hover {
+    opacity: 70%;
+  }
+  nav .links {
+    display: none;
+  }
+  nav .toggle_btn {
+    display: block;
+  }
+  .dropdown_menu {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .infoText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .homepage {
+    max-width: 50vw;
+  }
+
+  #about {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .infoCont {
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  #about img {
+    max-width: 22rem;
+  }
+  
+
+  .infoCont button:hover {
+    scale: 1;
+  }
+  
+  .courses img {
+    width: 10rem;
+    transition: scale 0.2S ease-in-out;
+  }
+  
+  .courses img:hover {
+    scale: 1;
+    cursor: pointer;
+  }
+
+}
