@@ -105,7 +105,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 section {
@@ -130,7 +129,7 @@ section {
 }
 
 .homepage h1 {
-  font-size: 4.75rem;
+  font-size: 4.5rem;
   color: var(--brand-color);
 }
 
@@ -409,7 +408,7 @@ footer {
 
 
   svg {
-    max-width: 4.5rem;;
+    max-width: 4rem;;
   }
 
   #projects button {
