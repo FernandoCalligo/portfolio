@@ -21,7 +21,7 @@
 }
 
 header {
-  position: fixed !important;
+  position: fixed;
   padding: 1rem 0;
   top: 0;
   left: 0;
@@ -100,11 +100,12 @@ li a:hover {
   padding: 0.7rem 0;
 }
 
-main {
+main {  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 section {
@@ -295,7 +296,7 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4rem;
+  gap: 3rem;
   z-index: 1;
   flex-wrap: wrap;
 }
@@ -406,8 +407,9 @@ footer {
 
 @media (max-width: 992px) {
 
+
   svg {
-    max-width: 8rem;
+    max-width: 4.5rem;;
   }
 
   #projects button {
