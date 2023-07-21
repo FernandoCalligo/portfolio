@@ -26,7 +26,6 @@ function getramdon (max) {
     return Math.floor(Math.random() * max)
 }
 
-console.log(getramdon(50))
 
 function createBubble() {
     const containerWidth = container.offsetWidth;
@@ -69,7 +68,7 @@ function createBubble() {
 // hover efect invertido
 
 const techSkills = document.querySelector(".techSkills");
-const techSvg = techSkills.querySelectorAll("svg")
+const techSvg = techSkills.querySelectorAll("#svg")
 
 techSvg.forEach((img) => { 
   img.addEventListener("mouseleave", () => {
@@ -84,16 +83,16 @@ techSvg.forEach((img) => {
 
     
     techSvg.forEach((img) => { 
-      img.setAttribute("style", "transition: all 0.2s ease-in-out; cursor:pointer")
+      img.setAttribute("style", "transition: all 0.2s ease-in-out; cursor:pointer; scale: 0.8;")
     });
 
-    selected.setAttribute("style", "scale:1.2; contrast:1.1; cursor:pointer; fill: #FDBA74; transition: all 0.2s")
+    selected.setAttribute("style", "color: var(--mid-color); scale:1.2;  cursor:pointer; transition: all 0.2s")
     
   })
 })
 
 const techLearning = document.querySelector("#techLearning")
-const learningSvg = techLearning.querySelectorAll("svg")
+const learningSvg = techLearning.querySelectorAll("#svg")
 
 learningSvg.forEach((img) => { 
   img.addEventListener("mouseleave", () => {
@@ -108,10 +107,10 @@ learningSvg.forEach((img) => {
 
     
     learningSvg.forEach((img) => { 
-      img.setAttribute("style", "transition: all 0.2s ease-in-out; cursor:pointer")
+      img.setAttribute("style", "transition: all 0.2s ease-in-out; cursor:pointer; scale: 0.8")
     });
 
-    selected.setAttribute("style", "scale:1.2; contrast:1.1; cursor:pointer; fill: #FDBA74; transition: all 0.2s")
+    selected.setAttribute("style", "color: var(--mid-color);scale:1.2; cursor:pointer; transition: all 0.2s")
     
   })
 })
